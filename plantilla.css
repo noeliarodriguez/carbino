@@ -436,6 +436,21 @@ footer .glyphicon {
     }
 
 }
+@media screen and (min-width: 768px) and (max-width:1024px)
+{
+    .navbar li a{
+        padding:28px 20px;
+    }
+    .slogan {
+        display:none !important;
+    }
+    .navbar{
+        opacity:1;
+    }
+    h1.logo_carbino{
+        display:  none;
+    }
+}
 
 @media screen and (max-width: 600px){
     .carousel-caption{

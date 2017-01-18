@@ -425,11 +425,12 @@
             }
             // End if
         });
-        $(".navbar a").on('click', function (event) {
-            event.preventDefault();
-            $(".navbar-toggle").click();
-        });
 
+            $(".navbar a").on('click', function (event) {
+                event.preventDefault();
+                if(window.innerWidth < 768)
+                    $(".navbar-toggle").click();
+            });
 
 
 
