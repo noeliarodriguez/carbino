@@ -533,9 +533,13 @@ nav > li > a {
 strong,em{
     color:#3C5D4D !important;
 }
-li.valor{
-    display:table;
+.valores{
+    display: table;
     width: 50%;
+    margin:0 auto;
+}
+li.valor{
+    width: 100%;
     text-align: center;
     padding:10px 0;
     color:#fff;
