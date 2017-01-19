@@ -468,10 +468,22 @@ nav > li > a {
     padding: 0 !important;
     margin: 0 !important;
 }
-@media screen and (max-width: 330px){
+@media screen and (max-width: 259px){
     #productos .thumbnail{
         position: relative;
-        right:5% !important;
+        right:20% !important;
+    }
+}
+@media screen and (min-width:260px){
+    #productos .thumbnail{
+        position: relative;
+        right:15% !important;
+    }
+}
+@media screen and (min-width: 270px){
+    #productos .thumbnail{
+        position: relative;
+        right:10% !important;
     }
 }
 @media screen and (min-width: 350px){
