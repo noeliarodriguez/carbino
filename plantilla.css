@@ -368,7 +368,8 @@ footer .glyphicon {
 
     }
 }
-@media screen and (max-width: 768px) {
+
+@media screen and (max-width: 767px) {
     .col-sm-4 {
         text-align: center;
         margin: 25px 0;
@@ -387,28 +388,24 @@ footer .glyphicon {
         font-size:18px;
     }
     .img_carbino {
-        width:35px !important;
-        float:left !important;
-        margin-right:10px;
+        width:40px !important;
     }
     h1.logo_carbino{
         display: inline-block !important;
         position: relative;
-        left:90px;
-        bottom:42px;
+        left:135px;
+        bottom:45px;
+        margin-left:-50px;
     }
 
     .slogan {
         display:none !important;
     }
-    #productos .thumbnail{
-        margin-left: 15%;
-    }
-
     #productos .thumbnail img {
         width: 50%;
         height: 50%;
     }
+
     .item-medio{ margin:0}
 
     .frases .item {
@@ -452,25 +449,62 @@ footer .glyphicon {
     }
 }
 
-@media screen and (max-width: 600px){
-    .carousel-caption{
-        font-size:10px;
-    }
-    .carousel-caption p{
-        line-height: 1;
-    }
-    .carousel-caption h3{
-        font-size:14px;
-        padding:0;
-        margin:5px 0 0 0;
+@media screen and (max-width: 600px) {
+    .carousel-caption {
+        font-size: 10px;
     }
 
+    .carousel-caption p {
+        line-height: 1;
+    }
+
+    .carousel-caption h3 {
+        font-size: 14px;
+        padding: 0;
+        margin: 5px 0 0 0;
+    }
 }
 nav > li > a {
     padding: 0 !important;
     margin: 0 !important;
 }
-
+@media screen and (max-width: 330px){
+    #productos .thumbnail{
+        position: relative;
+        right:5% !important;
+    }
+}
+@media screen and (min-width: 350px){
+    #productos .thumbnail{
+        position: relative;
+        left:5% !important;
+    }
+}
+@media screen and (min-width: 400px){
+    #productos .thumbnail{
+        position: relative;
+        left:10% !important;
+    }
+}
+@media screen and (min-width: 500px){
+    #productos .thumbnail{
+        position: relative;
+        left:15% !important;
+    }
+}
+@media screen and (min-width: 670px){
+    #productos .thumbnail{
+        position: relative;
+        left:20% !important;
+    }
+}
+@media screen and (min-width: 768px)
+{
+    #productos .thumbnail {
+        position: relative;
+        left:0 !important;
+    }
+}
 .img_carbino {
     width: 50px;
 
@@ -483,20 +517,19 @@ nav > li > a {
     margin: 5px 0 0 0;
     /*color:#4C535B;*/
 }
-
 #logocarbino {
     padding: 0;
     display: block;
     margin-top:7px;
 }
 #logocarbino img{
-    margin-left:30%;
+    margin-left:38% !important;
 }
 #logocarbino .slogan{
     font-size:.7em;
     display: block;
     color: #2d2d30;
-    
+    letter-spacing: 1px;
     margin:0;
 }
 .carousel-caption{
@@ -541,8 +574,9 @@ strong,em{
 li.valor{
     width: 100%;
     text-align: center;
-    padding:10px 0;
+    padding:10px 15px;
     color:#fff;
+    list-style: none;
 }
 li.valor:nth-child(1){
     background:#2A3276;
