@@ -15,6 +15,25 @@
 </head>
 <body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="50">
 
+<?php
+    if($_SERVER['REQUEST_METHOD'] == "POST")
+    {
+        if(isset($_POST['submit']))
+        {
+            $nombre = filtro($_POST["name"]);
+            $mail = filtro($_POST["email"]);
+            $mensaje = filtro($_POST["mensaje"]);
+        }
+    }
+    function filtro($data){
+        $data = stripslashes($data);
+        $data = htmlspecialchars($data);
+        return $data;
+    }
+
+?>
+
+
 <nav class="navbar navbar-default navbar-fixed-top">
     <div class="container">
         <div class="navbar-header">
@@ -79,11 +98,11 @@
         </div>
         <div class="item">
             <img src="img/img4.jpg" alt="Maquinas jardineria" width="1200" height="590">
-            <div class="carousel-caption">
+           <!-- <div class="carousel-caption">
                 <h3>NUESTRO COMPROMISO</h3>
                 <p>Un equipo humano de gran profesionalismo que respalda nuestras operaciones comerciales, con un
                     profundo sentido de servicio y dedicación.</p>
-            </div>
+            </div>-->
         </div>
     </div>
 
@@ -97,9 +116,9 @@
     </a>
 </div>
 
-<div id="quienes-somos" class="container-fluid text-left">
+<div id="quienes-somos" class="container-fluid text-center">
     <div class="row">
-        <div class="col-sm-9 offset-md-3">
+        <div class="col-xs-12">
             <h2>Quienes somos</h2><br>
             <h4>Somos una empresa Argentina convencida de que podemos ser competitivos en precio, calidad y
                 servicio.</h4>
@@ -109,7 +128,7 @@
         </div>
     </div>
     <div class="row">
-        <div class="col-sm-12">
+        <div class="col-xs-12">
             <p>Nos esforzamos en destacar por la excelente y rápida atención, y la gran predisposición para resolver
                 cualquier necesidad que nuestros clientes requieran. Es nuestro objetivo brindarles todas las
                 facilidades y soluciones que nos sea posible, tanto en artículos y accesorios como en logística y
@@ -122,9 +141,9 @@
     </div>
 </div>
 
-<div class="container-fluid text-left nuestras-bases">
+<div class="container-fluid text-center nuestras-bases">
     <div class="row">
-        <div class="col-sm-9 offset-md-3">
+        <div class="col-xs-12">
             <h2>Nuestras bases:</h2><br>
             <strong>Misión:</strong> Nos dedicamos a la distribución de productos para ferretería y jardinería, llegando
             a todo el país y destacandonos por la atención y el seguimiento de cerca de cada cliente atendiendo sus
@@ -135,11 +154,13 @@
 
     </div>
     <div class="row">
-        <div class="col-sm-9 offset-md-3">
+        <div class="col-xs-12">
             <p><strong>Valores: </strong>Entendemos que la dedicacion, el trabajo y la confianza es el principal sosten
                 humano de la empresa. Junto con esto nuestros principales valores son:
             </p><br>
-            <ul>
+        </div>
+        <div class="col-xs-12">
+            <ul class="valores">
                 <li class="valor">Respeto</li>
                 <li class="valor">Mejora constante</li>
                 <li class="valor">Excelencia en atención y respuesta</li>
@@ -147,7 +168,6 @@
                 <li class="valor">Fiabilidad</li>
             </ul>
         </div>
-
     </div>
 </div>
 
@@ -319,23 +339,26 @@
             <p><img src="img/whatsapp.png" alt="Whatsapp 011-2639-7605"> 011 2639 7605</p>
             <p><span class="glyphicon glyphicon-envelope"></span> info@carbinodistribuidora.com</p>
         </div>
-        <div class="col-sm-7 slideanim">
-            <div class="row">
-                <div class="col-sm-6 form-group">
-                    <input class="form-control" id="name" name="name" placeholder="Nombre y Apellido" type="text"
-                           required>
+        <!--<form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']);?>">-->
+            <div class="col-sm-7 slideanim">
+                <div class="row">
+                    <div class="col-sm-6 form-group">
+                        <input class="form-control" id="name" name="name" placeholder="Nombre y Apellido" type="text"
+                               required>
+                    </div>
+                    <div class="col-sm-6 form-group">
+                        <input class="form-control" id="email" name="email" placeholder="Email" type="email" required>
+                    </div>
                 </div>
-                <div class="col-sm-6 form-group">
-                    <input class="form-control" id="email" name="email" placeholder="Email" type="email" required>
+                <textarea class="form-control" id="mensaje" name="comments" placeholder="Mensaje" rows="5"></textarea><br>
+                <div class="row">
+                    <div class="col-sm-12 form-group">
+                        <button class="btn btn-default pull-right" type="submit">Enviar</button>
+                    </div>
                 </div>
             </div>
-            <textarea class="form-control" id="comments" name="comments" placeholder="Mensaje" rows="5"></textarea><br>
-            <div class="row">
-                <div class="col-sm-12 form-group">
-                    <button class="btn btn-default pull-right" type="submit">Enviar</button>
-                </div>
-            </div>
-        </div>
+        <!--</form>-->
+
     </div>
 </div>
 <!--
