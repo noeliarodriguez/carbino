@@ -11,25 +11,12 @@
     <script src="script.js"></script>
 </head>
 <body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="50">
-<!--
-<?php
-    if($_SERVER['REQUEST_METHOD'] == "POST")
-    {
-        if(isset($_POST['submit']))
-        {
-            $nombre = filtro($_POST["name"]);
-            $mail = filtro($_POST["email"]);
-            $mensaje = filtro($_POST["mensaje"]);
-        }
-    }
-    function filtro($data){
-        $data = stripslashes($data);
-        $data = htmlspecialchars($data);
-        return $data;
-    }
 
-?>
--->
+<div id="acceso" class="navbar-fixed-top">
+    <ul>
+        <li>Ingresar</li>
+    </ul>
+</div>
 <nav class="navbar navbar-default navbar-fixed-top">
     <div class="container">
         <div class="navbar-header">
@@ -54,8 +41,7 @@
         </div>
     </div>
 </nav>
-          <div id="myCarousel" class="carousel slide" data-ride="carousel">
-
+<div id="myCarousel" class="carousel slide" data-ride="carousel">
     <ol class="carousel-indicators">
         <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
         <li data-target="#myCarousel" data-slide-to="1"></li>
@@ -282,7 +268,6 @@
 
     <br>
 
-
     <div id="myCarousel1" class="carousel slide text-center carousel-parrafos" data-ride="carousel">
 
         <ol class="carousel-indicators">
@@ -290,7 +275,6 @@
             <li data-target="#myCarousel1" data-slide-to="1"></li>
             <li data-target="#myCarousel1" data-slide-to="2"></li>
         </ol>
-
 
         <div class="carousel-inner frases" role="listbox">
             <div class="item active">
@@ -316,53 +300,39 @@
           <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
           <span class="sr-only">Despues</span>
         </a>
-
-
-
     </div>
 </div>
-
-<div id="contacto" class="container-fluid bg-grey">
-    <h2 class="text-center">Contáctenos</h2>
-    <div class="row">
-        <div class="col-sm-5">
-            <p>Para hacer su pedido o consulta</p>
-            <p><span class="glyphicon glyphicon-map-marker"></span> Loyola 1045 F</p>
-            <p><span class="glyphicon glyphicon-phone"></span> 011 47713911</p>
-            <p><img src="img/whatsapp.png" alt="Whatsapp 011-2639-7605"> 011 2639 7605</p>
-            <p><span class="glyphicon glyphicon-envelope"></span> info@carbinodistribuidora.com</p>
-        </div>
-        <!--<form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']);?>">-->
-            <div class="col-sm-7 slideanim">
+<div id="contacto" class="bg-grey">
+    <div class="container">
+        <h2 class="text-center">Contáctenos</h2>
+        <div class="row">
+            <form name="form_contacto" id="form_contacto" action="forms/contacto.php" method="post" onsubmit="window.location.reload()">
+            <div class="col-sm-12 slideanim">
                 <div class="row">
                     <div class="col-sm-6 form-group">
                         <input class="form-control" id="name" name="name" placeholder="Nombre y Apellido" type="text"
-                               required>
+                               required data-toggle="popover" data-container="body" data-placement="top" data-content="Nombre y Apellido incorrecto">
                     </div>
                     <div class="col-sm-6 form-group">
-                        <input class="form-control" id="email" name="email" placeholder="Email" type="email" required>
+                        <input class="form-control" id="email" name="email" placeholder="Email" type="email" required data-toggle="popover" data-container="body" data-placement="top" data-content="Email incorrecto">
                     </div>
                 </div>
-                <textarea class="form-control" id="mensaje" name="comments" placeholder="Mensaje" rows="5"></textarea><br>
+                <textarea class="form-control" id="mensaje" name="mensaje"  title="mensaje" rows="5" required data-toggle="popover" data-container="body" data-placement="left" data-content="Escriba un mensaje"></textarea>
+                <br>
                 <div class="row">
+                    <div class="col-sm-12">
+                        <div id="msj-form"></div>
+                    </div>
                     <div class="col-sm-12 form-group">
-                        <button class="btn btn-default pull-right" type="submit">Enviar</button>
+                        <button class="btn btn-default pull-right enviar" type="submit">Enviar</button>
                     </div>
                 </div>
             </div>
-        <!--</form>-->
+            </form>
 
+        </div>
     </div>
 </div>
-
-<!--
-<footer class="container-fluid text-center footer">
-    <a href="#myPage" title="Arriba">
-        <span class="glyphicon glyphicon-chevron-up"></span>
-    </a>
-</footer>
--->
-
 <footer class="footer1">
     <div class="container-fluid">
         <div class="row">
@@ -371,60 +341,39 @@
                     <li class="widget-container widget_nav_menu">
                         <h1 class="title-widget">Productos</h1>
                         <ul>
-                            <li><a  href="#"><i class="fa fa-angle-double-right"></i>Bosque y jardín</a></li>
-                            <li><a  href="#"><i class="fa fa-angle-double-right"></i>Soldaduras y abrasivos</a></li>
-                            <li><a  href="#"><i class="fa fa-angle-double-right"></i>Máquinas herramientas</a></li>
-                            <li><a  href="#"><i class="fa fa-angle-double-right"></i>Seguridad industrial</a></li>
-                            <li><a  href="#"><i class="fa fa-angle-double-right"></i>Ferretería en general</a></li>
+                            <li><a  href="#"><span class="glyphicon glyphicon-asterisk"></span>Bosque y jardín</a></li>
+                            <li><a  href="#"><span class="glyphicon glyphicon-asterisk"></span>Soldaduras y abrasivos</a></li>
+                            <li><a  href="#"><span class="glyphicon glyphicon-asterisk"></span>Máquinas herramientas</a></li>
+                            <li><a  href="#"><span class="glyphicon glyphicon-asterisk"></span>Seguridad industrial</a></li>
+                            <li><a  href="#"><span class="glyphicon glyphicon-asterisk"></span>Ferretería en general</a></li>
                         </ul>
-
                     </li>
-
                 </ul>
-
-
-            </div><!-- widgets column left end -->
-
-
-
-            <div class="col-lg-3 col-md-3"><!-- widgets column left -->
-
-                <ul class="list-unstyled clear-margins"><!-- widgets -->
-
-                    <li class="widget-container widget_nav_menu"><!-- widgets list -->
-
-                        <h1 class="title-widget">Marcas</h1>
-
-                        <ul>
-                            <li><a  href="#"><i class="fa fa-angle-double-right"></i>Tyrolit</a></li>
-                            <li><a  href="#"><i class="fa fa-angle-double-right"></i>Acindar</a></li>
-                            <li><a  href="#"><i class="fa fa-angle-double-right"></i>Tauro</a></li>
-                            <li><a  href="#"><i class="fa fa-angle-double-right"></i>Tecnocom</a></li>
-                            <li><a  href="#"><i class="fa fa-angle-double-right"></i>Kuwait</a></li>
-                            <li><a  href="#"><i class="fa fa-angle-double-right"></i>Dibra</a></li>
-                            <li><a  href="#"><i class="fa fa-angle-double-right"></i>Osepyan</a></li>
-                            <li><a  href="#"><i class="fa fa-angle-double-right"></i>Etisa - in pack</a></li>
-
-                        </ul>
-
-                    </li>
-
-                </ul>
-
-
             </div>
-
-
-
             <div class="col-lg-3 col-md-3">
-
                 <ul class="list-unstyled clear-margins">
-
+                    <li class="widget-container widget_nav_menu">
+                        <h1 class="title-widget">Marcas</h1>
+                        <ul>
+                            <li><a  href="#"><span class="glyphicon glyphicon-asterisk"></span>Tyrolit</a></li>
+                            <li><a  href="#"><span class="glyphicon glyphicon-asterisk"></span>Acindar</a></li>
+                            <li><a  href="#"><span class="glyphicon glyphicon-asterisk"></span>Tauro</a></li>
+                            <li><a  href="#"><span class="glyphicon glyphicon-asterisk"></span>Tecnocom</a></li>
+                            <li><a  href="#"><span class="glyphicon glyphicon-asterisk"></span>Kuwait</a></li>
+                            <li><a  href="#"><span class="glyphicon glyphicon-asterisk"></span>Dibra</a></li>
+                            <li><a  href="#"><span class="glyphicon glyphicon-asterisk"></span>Osepyan</a></li>
+                            <li><a  href="#"><span class="glyphicon glyphicon-asterisk"></span>Etisa - in pack</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-lg-3 col-md-3">
+                <ul class="list-unstyled clear-margins">
                     <li class="widget-container widget_nav_menu">
                         <h1 class="title-widget">Atención al cliente</h1>
                         <ul>
-                            <li><a href="#"><i class="fa fa-angle-double-right"></i> Registrarse</a></li>
-                            <li><a href="#"><i class="fa fa-angle-double-right"></i> Acceso Clientes</a></li>
+                            <li><a href="#"><span class="glyphicon glyphicon-asterisk"></span>Registrarse</a></li>
+                            <li><a href="#"><span class="glyphicon glyphicon-asterisk"></span>Acceso Clientes</a></li>
                         </ul>
                         <br>
                         <h1 class="title-widget">Búsqueda</h1>
@@ -434,38 +383,22 @@
                         <br>
                         <input type="search" placeholder="Buscar por marca">
                     </li>
-
                 </ul>
-
-
             </div>
-
-
             <div class="col-lg-3 col-md-3">
-
-
-
                 <ul class="list-unstyled clear-margins">
-
                     <li class="widget-container widget_recent_news">
-
                         <h1 class="title-widget">Contacto</h1>
-
                         <div class="footerp">
-
                             <h2 class="title-median">Distribuidora Carbino</h2>
                             <p><b>Email:</b><br><span class="glyphicon glyphicon-envelope"></span> <a href="mailto:info@carbinodistribuidora.com">info@carbinodistribuidora.com</a></p>
                             <p><b>Teléfonos </b>
-                                <b style="color:#908645;">(24hs):<br></b><span class="glyphicon glyphicon-phone"></span>  011 47713911 <br><img src="img/whatsapp.png" alt="Whatsapp 011-2639-7605"> 011 2639 7605  </p>
+                                <br><span class="glyphicon glyphicon-phone"></span>  011 47713911 <br><img src="img/whatsapp.png" alt="Whatsapp 011-2639-7605"> 011 2639 7605  </p>
                             <p><b>Dirección:</b><br>
                             <span class="glyphicon glyphicon-map-marker"></span> Loyola 1045 F, Capital Federal Argentina</p>
                         </div>
-
                         <div class="social-icons">
-
-
                                 <img src="img/facebook.svg" alt="https://fb.me/DistribuidoraCarbino"><a href="https://fb.me/DistribuidoraCarbino" class="social">fb/DistribuidoraCarbino</a>
-
                         </div>
                     </li>
                 </ul>
