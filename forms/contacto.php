@@ -32,12 +32,9 @@ if($_SERVER['REQUEST_METHOD'] == "POST")
             $from = "carbinodistribuidora.com";
             define ( "MAIL_HEADERS", "From: $from\nReply-To: $from\nContent-type: text/html\nX-Mailer: PHP/" . phpversion ( ) . "" );
 
-            if(mail($to,$email_subject,$email_body,MAIL_HEADERS))
-                echo "<script>alert('Mensaje enviado'); location.href='/../index.html'</script>" ;
-            else
-                header('Location: http://www.carbinodistribuidora.com');
+            if(!mail($to,$email_subject,$email_body,MAIL_HEADERS))
+                $bSt = false;
         }
-
     }
 }
 
