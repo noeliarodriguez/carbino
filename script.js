@@ -45,77 +45,63 @@ $(document).ready(function () {
 
     var nombre = $("#name");
     var email = $("#email");
-    var msj = $("#mensaje");
 
     function validateUsername(){
-        //NO cumple longitud minima
         if(nombre.val().length < 3){
-            nombre.addClass("error");
-            $("#name").popover('show');
+            nombre.focus();
+            nombre.popover('show');
             return false;
         }
-        //SI longitud pero NO solo caracteres A-z
         else if(!nombre.val().match(/^[a-zA-Z]+$/)){
-            nombre.addClass("error");
-            $("#name").popover('show');
+            nombre.focus();
+            nombre.popover('show');
             return false;
         }
-        // SI longitud, SI caracteres A-z
         else{
-            nombre.removeClass("error");
-            $("#name").popover('hide');
+            nombre.popover('hide');
             return true;
         }
     }
 
     function validateEmail(){
-        //NO hay nada escrito
         if(email.val().length == 0){
-            email.addClass("error");
-            $("#email").popover('show');
+            email.focus();
+            email.popover('show');
             return false;
         }
-        // SI escrito, NO VALIDO email
         else if(!email.val().match(/^[^\s()<>@,;:\/]+@\w[\w\.-]+\.[a-z]{2,}$/i)){
-            email.addClass("error");
-            $("#email").popover('show');
+            email.focus();
+            email.popover('show');
             return false;
         }
-        // SI rellenado, SI email valido
         else{
-            email.removeClass("error");
-            $("#email").popover('hide');
-            return true;
-        }
-    }
-    function validateMensaje(){
-        if(msj.val()==0){
-            msj.addClass("error");
-            $("#mensaje").popover("show");
-            return false;
-        }
-        else
-        {
-            msj.removeClass("error");
-            $("#mensaje").popover('hide');
+            email.popover('hide');
             return true;
         }
     }
 
-    //controlamos la validacion en los distintos eventos
     // Perdida de foco
         nombre.blur(validateUsername);
         email.blur(validateEmail);
 
-    // Pulsacion de tecla
-     //   nombre.keyup(validateUsername);
-     //   email.keyup(validateEmail);
-
     // Envio de formulario
-        $("#form1").submit(function(){
-            return !!(validateUsername() & validateEmail() & validateMensaje());
+
+    $("#form_contacto").submit(function( event ){
+        event.preventDefault();
+
+        $.ajax({
+            type: 'POST',
+            url: '../forms/contacto.php',
+            data: $(this).serialize(),
+            success: function(data){
+                $("#respuesta").slideDown();
+                $("#respuesta").html(data);
+                $('#respuesta2').modal('show');
+                document.getElementById('form_contacto').reset();
+            }
         });
 
-
+        return false;
+    });
 
 });
