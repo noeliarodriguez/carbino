@@ -47,7 +47,7 @@ $(document).ready(function () {
     var email = $("#email");
 
     function validateUsername(){
-        if(nombre.val().length < 3){
+        if(nombre.val().length < 4){
             nombre.focus();
             nombre.popover('show');
             return false;
@@ -91,7 +91,7 @@ $(document).ready(function () {
 
         $.ajax({
             type: 'POST',
-            url: '../forms/contacto.php',
+            url: 'forms/contacto.php',
             data: $(this).serialize(),
             success: function(data){
                 $("#respuesta").slideDown();
