@@ -16,6 +16,10 @@
     font-weight: 400;
     src: local('Lato Regular'), local('Lato-Regular'), url(fuentes/Lato-Regular.ttf);
 }
+.hide{
+    display:none;
+}
+
 body {
     font: 400 15px/1.8 Lato, sans-serif;
     color: #818181;
@@ -770,18 +774,7 @@ a.social {
     font-size:12px;
     margin-left:-8px;
 }
-.social-fb:hover {
-    color: #3B5998;
-}
-.social-tw:hover {
-    color: #4099FF;
-}
-.social-gp:hover {
-    color: #d34836;
-}
-.social-em:hover {
-    color: #f39c12;
-}
+
 .nomargin { margin:0; padding:0;}
 
 .footer-bottom {
@@ -803,4 +796,29 @@ a.social {
 }
 .design a:hover{
     color:#BABDE0;
+}
+
+input:focus,textarea:focus{
+    outline:0 !important;
+    border:1px solid  #039870 !important;
+    -webkit-box-shadow: 0 0 5px 0 rgba(2,85,63,1) !important;
+    -moz-box-shadow: 0 0 5px 0 rgba(2,85,63,1) !important;
+    box-shadow: 0 0 5px 0 rgba(2,85,63,1) !important;
+}
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+    transition: background-color 5000s ease-in-out 0s;
+}
+.alert-success {
+    color: rgba(2,85,63,1);
+    background-color: #edf0e9;
+    border-color: #edf0e9;
+}
+
+.alert-danger {
+    color: #8F1236;
+    background-color: #FEF3F7;
+    border-color: #FEF3F7;
 }

@@ -306,8 +306,7 @@
     <div class="container">
         <h2 class="text-center">Contáctenos</h2>
         <div class="row">
-            <!--<?php if(!$bSt)-->
-            <form name="form_contacto" id="form_contacto" action="forms/contacto.php" method="post" onsubmit="window.location.reload()">
+            <form name="form_contacto" id="form_contacto" action="forms/contacto.php" method="post">
             <div class="col-sm-12 slideanim">
                 <div class="row">
                     <div class="col-sm-6 form-group">
@@ -325,8 +324,11 @@
                         <div id="msj-form"></div>
                     </div>
                     <div class="col-sm-12 form-group">
-                        <button class="btn btn-default pull-right enviar" type="submit">Enviar</button>
+                        <button class="btn btn-default pull-right enviar" name="submit" type="submit">Enviar</button>
+                        <img src="img/ajaxgif.gif" class="pull-right hide" id="gif" width="40px"/>
+                         <div id="respuesta" class="hide pull-right"></div>
                     </div>
+
                 </div>
             </div>
             </form>
@@ -378,11 +380,14 @@
                         </ul>
                         <br>
                         <h1 class="title-widget">Búsqueda</h1>
-                        <input type="search" placeholder="Buscar por producto">
-                        <br>
-                        <input type="search" placeholder="Buscar por codigo">
-                        <br>
-                        <input type="search" placeholder="Buscar por marca">
+                        <form action="#" id="form_busqueda_footer" method="post">
+                            <input type="search" placeholder="Buscar por producto" class="form-control">
+                            <br>
+                            <input type="search" placeholder="Buscar por codigo" class="form-control">
+                            <br>
+                            <input type="search" placeholder="Buscar por marca" class="form-control">
+                        </form>
+
                     </li>
                 </ul>
             </div>

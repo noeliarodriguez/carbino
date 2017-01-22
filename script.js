@@ -52,7 +52,7 @@ $(document).ready(function () {
             nombre.popover('show');
             return false;
         }
-        else if(!nombre.val().match(/^[a-zA-Z]+$/)){
+        else if(!nombre.val().match(/^[a-zA-ZáéíóúàèìòùÀÈÌÒÙÁÉÍÓÚñÑüÜ_\s]+$/)){
             nombre.focus();
             nombre.popover('show');
             return false;
@@ -88,14 +88,18 @@ $(document).ready(function () {
 
     $("#form_contacto").submit(function( event ){
         event.preventDefault();
-
+        var respuesta = $("#respuesta");
         $.ajax({
             type: 'POST',
             url: 'forms/contacto.php',
             data: $(this).serialize(),
+            beforeSend:function(){
+              $("#gif").removeClass("hide");
+            },
             success: function(data){
-                $("#respuesta").slideDown();
-                $("#respuesta").html(data);
+                $("#gif").addClass("hide");
+                respuesta.removeClass("hide");
+                respuesta.html(data);
                 $('#respuesta2').modal('show');
                 document.getElementById('form_contacto').reset();
             }
