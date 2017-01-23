@@ -822,3 +822,39 @@ input:-webkit-autofill:active {
     background-color: #FEF3F7;
     border-color: #FEF3F7;
 }
+
+
+#acceso a.login-modal{
+    color:#fff;
+    text-decoration: none;
+    margin:0;
+    padding:8px 10px 8px 10px;
+}
+#acceso .login-modal:hover{
+    background:#f6f6f6;
+    color:black;
+}
+
+#acceso ul li{
+    border:0;
+    margin:0;
+
+}
+
+#login .form-control{
+    margin:0 0 3px 0 !important;
+}
+#login .form-control:nth-child(1){
+    margin-top:-25px !important;
+}
+#btn-login{
+    margin-bottom: -40px !important;
+    margin-top:10px !important;
+}
+.modal-header{
+    background:#857A31 !important;
+    padding:10px !important;
+}
+.modal-title{
+    color: #fff !important;
+}

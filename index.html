@@ -14,7 +14,7 @@
 
 <div id="acceso" class="navbar-fixed-top">
     <ul>
-        <li>Ingresar</li>
+        <li><a href="#" class="login-modal">Ingresar</a></li>
     </ul>
 </div>
 <nav class="navbar navbar-default navbar-fixed-top">
@@ -94,6 +94,31 @@
         <span class="sr-only">Despues</span>
     </a>
 </div>
+
+<!-- #### INGRESO ##### -->
+<div class="modal fade" id="ingreso-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="myModalLabel">Acceso Usuario</h4>
+            </div>
+            <div class="modal-body">
+                <form action="acceso/index.html" autocomplete="off" method="post" id="login" role="form">
+                    <div class="form-group">
+                        <input type="email" name="email" class="form-control" placeholder="Email">
+                        <input type="password" name="password" class="form-control" placeholder="Contraseña">
+                        <button type="submit" id="btn-login" class="btn btn-default btn-lg btn-block">Iniciar Sesión</button>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default">Registrarse</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- #################-->
 
 <div id="quienes-somos" class="container-fluid text-center">
     <div class="row">
@@ -376,7 +401,7 @@
                         <h1 class="title-widget">Atención al cliente</h1>
                         <ul>
                             <li><a href="#"><span class="glyphicon glyphicon-asterisk"></span>Registrarse</a></li>
-                            <li><a href="#"><span class="glyphicon glyphicon-asterisk"></span>Acceso Clientes</a></li>
+                            <li><a href="#" class="login-modal"><span class="glyphicon glyphicon-asterisk"></span>Acceso Clientes</a></li>
                         </ul>
                         <br>
                         <h1 class="title-widget">Búsqueda</h1>

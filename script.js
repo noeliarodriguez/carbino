@@ -108,4 +108,9 @@ $(document).ready(function () {
         return false;
     });
 
+    $(".login-modal").click(function(){
+        $("#ingreso-modal").modal("show");
+    });
+
+
 });
